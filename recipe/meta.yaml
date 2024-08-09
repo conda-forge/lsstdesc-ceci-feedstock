@@ -15,7 +15,7 @@ build:
     - ceci-update-for-version-2 = ceci.update_pipelines_for_ceci_2:main
     - ceci-ancestors = ceci.tools.ancestors:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
