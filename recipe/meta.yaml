@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz
   sha256: 3f3e2f79a8c43f4a32a02ca00fe8401ec1f99388d48d7cd7747f276bf27efd82
 
 build:
@@ -15,20 +15,22 @@ build:
     - ceci-update-for-version-2 = ceci.update_pipelines_for_ceci_2:main
     - ceci-ancestors = ceci.tools.ancestors:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  noarch: python
   number: 3
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - setuptools >=61.0
     - wheel
     - setuptools-scm >=6.2
     - pip
   run:
-    - python
+    - python >={{ python_min }}
+    - setuptools
     - pyyaml >=5.1
     - psutil
-    - graphlib-backport  # [py<39]
+    - graphlib-backport
     - ruamel.yaml
 
 test:
@@ -40,6 +42,7 @@ test:
     - ceci-update-for-version-2 --help
     - ceci-ancestors --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
