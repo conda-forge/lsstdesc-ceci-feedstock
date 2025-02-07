@@ -30,7 +30,6 @@ requirements:
     - setuptools
     - pyyaml >=5.1
     - psutil
-    - graphlib-backport
     - ruamel.yaml
 
 test:
