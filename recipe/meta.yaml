@@ -3,7 +3,7 @@
 
 package:
   name: lsstdesc-{{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz
