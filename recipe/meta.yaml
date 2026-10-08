@@ -1,13 +1,13 @@
 {% set name = "ceci" %}
-{% set version = "2.5.1" %}
+{% set version = "2.6" %}
 
 package:
   name: lsstdesc-{{ name|lower }}
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz
-  sha256: 6215d313e6dc1409fb2a068c9d7b767a30f350f2d931df5bbcac9b98d0409c18
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz
+  sha256: 05695e50df3cdb986f9a0367989aaf56e8670397ba4dfd7450342800f84bc2e0
 
 build:
   entry_points:
